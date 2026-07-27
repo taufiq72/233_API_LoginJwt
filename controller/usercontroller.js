@@ -1,3 +1,4 @@
+require("dotenv").config();
 const db = require('../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -88,7 +89,7 @@ async function login(req, res) {
             message: 'Login berhasil',
             token
         });
-        
+
     } catch (error) {
         return res.status(500).json({
             message: error.message 
